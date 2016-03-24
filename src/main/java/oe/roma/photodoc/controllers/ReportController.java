@@ -2,7 +2,6 @@ package oe.roma.photodoc.controllers;
 
 
 import oe.roma.photodoc.domain.Customer;
-import oe.roma.photodoc.domain.File;
 import oe.roma.photodoc.services.ReportService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,14 +23,12 @@ public class ReportController {
     private ReportService reportService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String downloadExcelAll(@RequestParam Integer rem_id, @RequestParam Integer value_type_id, ModelMap model) {
+    public String downloadExcelAll(@RequestParam Integer rem_id, ModelMap model) {
 
         List<Customer> list = reportService.recordsList(rem_id);
-        List<File> listFile = reportService.recordsListFile(value_type_id);
 
         model.addAttribute("list", list);
-        model.addAttribute("list", listFile);
-        System.out.println(value_type_id);
+        //System.out.println(value_type_id);
         return "report";
     }
 }

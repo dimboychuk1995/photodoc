@@ -43,13 +43,6 @@ public class ReportService {
         return (List) results.get("records");
     }
 
-    public List<File> recordsListFile(Integer value_type_id){
-        final MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("value_type_id",value_type_id);
-        Map<String, Object> results = jdbcCall.execute(params);
-        return (List) results.get("records");
-    }
-
 
 
 

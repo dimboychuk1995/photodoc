@@ -39,11 +39,6 @@
                 <option value="${rem.id}">${rem.name}</option>
             </c:forEach>
         </select>
-        <br />
-        <select id="value_type_id" name="value_type_id">
-            <option value="1">Документи</option>
-            <option value="2">Фото</option>
-        </select>
 <button class="submit">сформувати звіт</button>
 </form>
 </div>
